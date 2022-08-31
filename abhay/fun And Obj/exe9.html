@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallBackHell</title>
+</head>
+
+<body>
+    <script>
+        // const fun1 = () => {
+        //     setTimeout(() => { console.log("I am in 1st loop") },
+        //         setTimeout(() => { console.log("I am in second loop") },
+        //             setTimeout(() => { console.log("Execution done...") }, 1000),
+        //             1000),
+        //         0);
+        // }
+        // setTimeout(() => {
+
+        //     setTimeout(() => {
+
+        //     }, timeout);
+        // });
+          const fun1=()=>{
+          setTimeout(()=>{
+              console.log("I am in 1st loop")
+              setTimeout(()=>{
+                  console.log("I am in second loop")
+                  setTimeout(()=>{
+                      console.log("Execution done...")
+                  },2000)
+              },2000)
+          },2000)
+          }
+        fun1();
+    </script>
+
+</body>
+
+</html>

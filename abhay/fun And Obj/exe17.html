@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAllback</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <input type="number" id="First">
+    <input type="number" id="second">
+    <button id="myBtn">Addition</button>
+    <p id="demo"></p>
+    <script>
+    function funC1(callback){
+        var a=document.getElementById("First");
+        var b=document.getElementById("second");
+        var sum=Number(a.value)+Number(b.value);
+        callback(sum);
+    }
+    function x(a){
+        document.getElementById("demo").innerHTML= a;
+    }
+    document.getElementById("myBtn").addEventListener("click",function(){ funC1(x)});
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution</title>
+</head>
+
+<body>
+        <script>
+            let b;
+            function run(){
+                setTimeout(function (){
+                    console.log("i am running");
+                    setTimeout(function sing(){
+                        console.log("I am singing");
+                        b=true;
+                    }, 2000);
+                },1000)
+
+            };
+            function eat(){
+                console.log("i am Eating...")
+            }
+            run();
+            while(true){
+                if(b){
+                    setTimeout(() => {
+                        eat();
+                    }, 1000); 
+                }
+                break;
+            }
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Function</title>
+</head>
+<body>
+    <script>
+        // var test={function(){
+        //     a=10;
+        // }}
+        var test=function (){
+            a=10;
+        }
+        function checkFun(x){
+            if(x  instanceof Function){
+                console.log("var is function")
+            }
+            else{
+                console.log("Var is Something other than function :")
+            }
+        }
+        checkFun(test);
+    </script>
+    
+</body>
+</html>

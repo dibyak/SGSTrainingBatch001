@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exe5</title>
+</head>
+
+<body>
+  <script>
+    /*1. function sing(){
+      console.log("1.I am singing:");
+      setTimeout(() => {
+      console.log("completed:")
+     },  500)
+     }
+     function run(){
+      console.log("I am running");
+     }
+    
+      setTimeout(sing(),0);
+      setTimeout(eat,5000);
+     function eat(){
+      console.log("3. I am eating:");
+     }*/
+    var a;
+    var b = false;
+    var cnt = 0
+    console.log(b);
+
+    function sing() {
+      console.log("I am singing...");
+      a = true;
+    }
+    function run() {
+      console.log("I am running...");
+      setTimeout(function () {
+        b = true;
+      }, 3000)
+      //b = true;
+      //cnt += 1;
+    }
+    function eat() {
+      console.log("I am eating...");
+    }
+    setTimeout(run, 0);
+    sing();
+    while (true) {
+      setTimeout(function (
+      ) {
+        console.log("inwhile");
+        if (b) {
+          console.log("x");
+          eat();
+        }
+      }, 0)
+      //break;
+
+    }
+
+
+
+
+  </script>
+</body>
+
+</html>

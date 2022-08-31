@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exe Call Back</title>
+</head>
+<body>
+    <script>
+        /*
+        function math(x){
+            console.log(x);
+        }
+        function add(a,b){
+            var x= a+b;
+            math(x);
+        }
+        let res=add(10,30);*/
+         //call back
+        function a(){
+            console.log("1. I comepleted my primary Education:");
+            b();
+        }
+        function b(){
+            console.log("2. I completed my HSC");
+            c();
+        }
+        function c(){
+            console.log("3. I completed my BE in 2021");
+            d();
+        
+        }
+        function d(){
+            console.log("4. I got a job");
+        }
+        //a(b);
+        setTimeout(a,1000);
+
+    </script>
+</body>
+</html>

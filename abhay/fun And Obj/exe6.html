@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>By Passing Value</title>
+</head>
+<body>
+    <Script>
+        function add(x,y){
+                var a=function(a,b){
+                    sum1 = a+b;
+                    return sum1;
+                };
+            var res=a(2,8)+x+y;
+            console.log("Addition is equal to:"+res);
+            mul(4,5);
+
+        }
+        function mul(x,y){
+            var res=x*y;
+            function cut(e){
+                var z=e/2;
+                return z
+            };
+            console.log("Multiplication is :"+res +" "+cut(res));
+            div(res,5);
+
+        }
+        function div(x,y){
+            var res=x/y;
+            console.log("Division is:"+res);
+
+        }
+        setTimeout(add, 4000, 10,20);
+    </Script>
+</body>
+</html>

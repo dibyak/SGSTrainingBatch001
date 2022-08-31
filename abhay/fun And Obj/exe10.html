@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallBack1</title>
+</head>
+
+<body>
+    <script>
+
+        let c;
+        let d;
+        const calsi = (a, b) => {
+            setTimeout((add) => {
+                 c = a + b; console.log("Addition is :" + c)
+                setTimeout((sub) => {  d = a - b; console.log("Substraction is :" + d)
+                setTimeout((mul)=>{e= d*c; console.log("multiplication is :"+e)},1000) 
+            },3000)
+        }, 0)
+
+        }
+        calsi(10, 20);
+    </script>
+</body>
+
+</html>

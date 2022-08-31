@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<script>
+var resolveAfter25Seconds = (func) => {
+    console.log(`starting a slow promise on: ${func}`)
+    return new Promise(resolve => {
+        setTimeout(function() {
+            resolve(25)
+            console.log(`slow promise is done on: ${func}`)
+        }, 25000)
+    })
+}
+
+var concurrentStart = async () => {
+    console.log("--- Concurrent Start ---")
+    const slow = resolveAfter25Seconds('concurrent start')
+    const fast = resolveAfter1Second('concurrent start')
+    console.log(await slow + ' - concurrent start')
+    console.log(await fast + ' - concurrent start')
+}
+</script>
+</body>
+</html>
