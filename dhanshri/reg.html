@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic HTML Page</title>
+    <link rel="stylesheet" href="reg.css" type="text/css">
+</head>
+
+<body onload="init()"
+     <div class="main">
+    <div class="register">
+        <h2> Dynamic HTML Page</h2>
+        <form id="register" method="post">
+            <div class="" id="dynamic">
+                <div class="" id="fam">
+                    
+                </div>
+                <button type="button" onclick="add_more()"> Add More</button>
+                <button type="button" onclick="submit_All()"> Submit</button>
+            </div>
+        </form>
+    </div>
+    </div>
+    <script>
+        var counter = 1;
+        var nameList = [];
+        function init() {
+            add_more()
+            
+
+        }
+        function submit_All() {
+
+            var eleArr = document.getElementsByClassName('fName_input');
+            var eleArr1 = document.getElementsByClassName('lName_input');
+
+            for (var i = 0; i < eleArr.length; i++) {
+
+            }
+            for (var i = 0; i < eleArr1.length; i++) {
+
+                nameList.push(eleArr[i].value + ' ' + eleArr1[i].value);
+                console.log(eleArr[i].value + ' ' + eleArr1[i].value);
+
+                //  var nameList_string = JSON.stringify(nameList);
+                //  var file = new Blob([nameList_string],{type:"text"});
+                //  var anchor = document.createElement("a");
+                //  anchor.href = URL.createObjectURL(file);
+                //  anchor.download = "My Details";
+                //  anchor.click();
+            }
+        }
+
+
+        function add_more() {
+            var html = '<div class="" id= "f' + counter + '" >';
+            html = html + '<label for="fname">First Name </label>';
+            html = html + '<input type="text" class ="fName_input" name="name" id="fname  ' + counter + '" >';
+            html = html + '<label for="lname">Last Name </label>';
+            html = html + '<input type="text" class ="lName_input" name="name" id="lname ' + counter + '">';
+            html = html + '</div>';
+            counter = counter + 1;
+            var num = document.getElementById("fam");
+            num.insertAdjacentHTML('beforeend', html);
+        }
+    </script>
+</body>
+
+</html>
