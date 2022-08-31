@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: lightblue;
+}
+#odd{
+    background-color: rgb(207, 195, 27);
+  color: white;
+  padding: 50px;
+  border: 0ch;
+  margin-top: auto;
+  text-align: left;
+
+}
+#even{
+    background-color: rgb(71, 203, 255);
+  color: white;
+  padding: 50px;
+  border: 0ch;
+  margin-top: auto;
+  text-align: left;
+  }
+  #B1{
+    background-color: coral;
+    text-align: center;
+    margin-bottom: auto;
+    padding-top: 0%;
+    border: 0ch;
+  }
+</style>
+</head>
+<body>
+<h1> Login Form</h1>
+<form name="myform" action="/index.html" onsubmit=" return myfun()" method="post">
+    <div id="odd">
+    <label for="fname" >First Name:</label><br>
+    <input type="text" id="fname" name="name" size="100">
+    </div>
+    <div id="even">
+    <label for="Lname">Last Name:</label><br>
+    <input type="text" id="lname" name="lname" size="100"><br>
+    </div>
+    
+
+
+  
+    <button onclick="myFun() " id="button1" style="color: red;">Add More</button>
+    <p id="demo"></p>
+    <script>
+    function myFun(){
+      let x = document.forms["myForm"]["fname"].value;
+    document.getElementById("demo").innerHTML = x;
+   console.log("hello")
+    }
+    </script> </div>
+    Name: <input type="text" name="fname">
+    <input type="submit" value="Submit">
+</form>
+
+
+</body>
+
+</html>
