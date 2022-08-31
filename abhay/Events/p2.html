@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Apply Functions </h2>
+    <p id="demo"></p>
+    <script>
+        const person ={
+            full: function(city, country){
+                return this.fname + " "+this.lname +" ,"+city +","+country;
+
+            }
+        }
+        const person1={
+            fname:"john",
+            lname:"deo",
+        }
+        document.getElementById("demo").innerHTML = person.full.apply(person1, ["CS","India"]);
+        console.log( person.full.apply(person1, ["CS","India"]));
+    </script>
+
+</body>
+</html>
