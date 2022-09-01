@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check1</title>
+</head>
+
+<body>
+    <input type="text" id="input">
+    <button type="button" onclick="myFunction()">Test Input</button>
+    <p id="p01"></p>
+    <script>
+        // function myFunction() {
+        //     const message = document.getElementById("p01");
+        //     message.innerHTML = "";
+        //     let x = document.getElementById("demo").value;
+        //     try {
+        //         if( x == "") throw "empty";
+        //         if(isNaN(x)) throw "not a number";
+        //     }
+        //     catch (err) {
+        //         message.innerHTML = "Input is " + err;
+        //     }
+        // }
+        /*var Check = document.getElementById("input");
+
+        if (Check.value == Check / 1) {
+           alert("This IS a number \n")
+        }
+
+        else {
+           alert("This is NOT a number \n")
+        }*/
+        let a="12a";
+        let b="W3Schools";
+        let c=["10","20","30"];
+        let d={ a:"w3school"};
+        let e=function(){
+            a=10;
+        }
+
+        function check(ele) {
+            if(typeof ele =="number")
+            {
+                console.log("This is number ");
+            }else if(typeof ele == "string")
+            {
+                console.log("This is string:");
+            }else if(typeof ele == "array")
+            {
+                console.log("This is array:");
+            }else if(typeof ele == "object")
+            {
+                console.log("This is object:");
+            }else if(typeof ele == "function")
+            {
+                console.log("This is function:");
+            }
+            
+        }
+        check(a);
+
+        
+    </script>
+
+</body>
+
+</html>
