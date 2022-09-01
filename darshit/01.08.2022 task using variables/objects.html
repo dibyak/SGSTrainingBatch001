@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        //1.let and let
+        //CASE 1
+        // let a = { x : 5 };
+        // {
+        //     let b = a;
+        //     b.x = 10;
+        //     console.log(a.x); //outputs 10
+        // }
+        // console.log(a.x); //outputs 10
+
+        //CASE 2
+        // let a = { x : 5 };
+        // {
+        //     let b = a;
+        //     a.x = 10;
+        //     console.log(b.x); //outputs 10
+        // }
+        // console.log(b.x); //outputs error : b is not defined
+
+        //let and var
+        //CASE 1
+        // let a = { x : 5 };
+        // {
+        //     var b = a;
+        //     b.x = 10;
+        //     console.log(a.x); //outputs 10
+        // }
+        // console.log(a.x); //outputs 10
+
+        //CASE 2
+        // let a = { x : 5 };
+        // {
+        //     var b = a;
+        //     a.x = 10;
+        //     console.log(b.x); //outputs 10
+        // }
+        // console.log(b.x); //outputs 10
+
+        //let and const
+        //CASE 1
+        // let a = { x : 5 };
+        // {
+        //     const b = a;
+        //     b.x = 10;
+        //     console.log(a.x); //outputs 10
+        // }
+        // console.log(a.x); //outputs 10
+
+        //CASE 2
+        // let a = { x : 5 };
+        // {
+        //     const b = a;
+        //     a.x = 10;
+        //     console.log(b.x); //outputs 10
+        // }
+        // console.log(b.x); //outputs error : b is not defined
+
+        //2.const and const
+        //CASE 1
+        // const a = { x : 5 };
+        // {
+        //     const b = a;
+        //     b.x = 10;
+        //     console.log(a.x); //outputs 10
+        // }
+        // console.log(a.x); //outputs 10
+
+        //CASE 2
+        // const a = { x : 5 };
+        // {
+        //     const b = a;
+        //     a.x = 10;
+        //     console.log(b.x); //outputs 10
+        // }
+        // console.log(b.x); //outputs error : b is not defined
+
+        //const and let
+        //CASE 1
+        // const a = { x : 5 };
+        // {
+        //     let b = a;
+        //     b.x = 10;
+        //     console.log(a.x); //outputs 10
+        // }
+        // console.log(a.x); //outputs 10
+
+        //CASE 2
+        // const a = { x : 5 };
+        // {
+        //     let b = a;
+        //     a.x = 10;
+        //     console.log(b.x); //outputs 10
+        // }
+        // console.log(b.x); //outputs error : b is not defined
+
+        //const and var
+        //CASE 1
+        // const a = { x : 5 };
+        // {
+        //     var b = a;
+        //     b.x = 10;
+        //     console.log(a.x); //outputs 10
+        // }
+        // console.log(a.x); //outputs 10
+
+        //CASE 2
+        // const a = { x : 5 };
+        // {
+        //     var b = a;
+        //     a.x = 10;
+        //     console.log(b.x); //outputs 10
+        // }
+        // console.log(b.x); //outputs 10
+
+        //3.var and var
+        //CASE 1
+        // var a = { x : 5 };
+        // {
+        //     var b = a;
+        //     b.x = 10;
+        //     console.log(a.x); //outputs 10
+        // }
+        // console.log(a.x); //outputs 10
+
+        //CASE 2
+        // var a = { x : 5 };
+        // {
+        //     var b = a;
+        //     a.x = 10;
+        //     console.log(b.x); //outputs 10
+        // }
+        // console.log(b.x); //outputs 10
+
+        //var and const
+        //CASE 1
+        // var a = { x : 5 };
+        // {
+        //     const b = a;
+        //     b.x = 10;
+        //     console.log(a.x); //outputs 10
+        // }
+        // console.log(a.x); //outputs 10
+
+        //CASE 2
+        // var a = { x : 5 };
+        // {
+        //     const b = a;
+        //     a.x = 10;
+        //     console.log(b.x); //outputs 10
+        // }
+        // console.log(b.x); //outputs error : b is not defined
+
+        //var and let
+        //CASE 1
+        // var a = { x : 5 };
+        // {
+        //     let b = a;
+        //     b.x = 10;
+        //     console.log(a.x); //outputs 10
+        // }
+        // console.log(a.x); //outputs 10
+
+        //CASE 2
+        var a = { x : 5 };
+        {
+            let b = a;
+            a.x = 10;
+            console.log(b.x); //outputs 10
+        }
+        console.log(b.x); //outputs error : b is not defined
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        // const arr = [
+        // new Promise((resolve, reject) => {
+        //     resolve(setTimeout(run, 0));
+        // }),
+        // new Promise((resolve, reject) => {
+        //   resolve(setTimeout(sing, 0));
+        // }),
+    //     new Promise((resolve, reject) => {
+    //       setTimeout(() => {
+    //         resolve("function run executed..");
+    //       }, 0);
+    //     }),
+    //     new Promise((resolve, reject) => {
+    //       setTimeout(() => {
+    //         resolve("function sing executed..");
+    //       }, 0);
+    //     }),
+    //   ];
+    //   const lastFunction = () => {
+    //     console.log("function eat executed..");
+    //   };
+    //   Promise.all([arr[0], arr[1]])
+    //     .then((resp) => {
+    //       console.log(resp);
+    //       lastFunction();
+    //     })
+    //     .catch((err) => {
+    //       console.log("something unexpected happened");
+    //     });
+            function eat() {
+                  console.log("function eat executed..");
+              };
+ 
+        let run = new Promise(function(resolve, reject) {
+        setTimeout(() => resolve("function run executed.."), 0);
+        });
+
+        let sing = new Promise(function(resolve, reject) {
+        setTimeout(() => resolve("function sing executed.."), 0);
+        });
+
+        Promise.all([run, sing])
+        .then(result => {
+        console.log(result.join(","));
+        eat();
+        });
+    </script>
+  </body>
+</html>

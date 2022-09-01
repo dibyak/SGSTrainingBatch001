@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hello RequireJS</title>
+    <script type="text/javascript" src="http://requirejs.org/docs/release/2.3.2/minified/require.js"></script>
+</head>
+<body>
+    <script>
+        requirejs(["scripts/say"], function(say) {
+            console.log(say.hello("english"));
+            console.log(say.hello("spanish"));
+            console.log(say.hello("french"));
+        });
+    </script>
+</body>

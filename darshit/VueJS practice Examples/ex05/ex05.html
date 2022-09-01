@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <html>
+   <head>
+      <title>VueJs Introduction</title>
+      <script type = "text/javascript" src = "/vue.js"></script>
+   </head>
+   <body>
+      <script type = "text/javascript">
+         var vm = new Vue({
+            data: { a: 2 },
+            computed: {
+            
+               // get only, just need a function
+               aSum: function () {
+                  return this.a + 2;
+               },
+               
+               // both get and set
+               aSquare: {
+                  get: function () {
+                     return this.a*this.a;
+                  },
+                  set: function (v) {
+                     this.a = v*2;
+                  }
+               }
+            }
+         })
+         console.log(vm.aSquare);  // -> 4
+         vm.aSquare = 3;
+         console.log(vm.a);       // -> 6
+         console.log(vm.aSum); // -> 8
+      </script>
+   </body>
+</html>
+</body>
+</html>

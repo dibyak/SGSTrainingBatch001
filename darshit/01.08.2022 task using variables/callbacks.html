@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callbacks</title>
+</head>
+<body>
+    <script>
+        function f1(something) {
+            console.log(something);
+        };
+        function f2(a,b,callback) {
+            let sum = a + b;
+            callback("sum is : "+sum);
+        };
+        // f2(5,5,f1);
+        function f3(a,b,callback) {
+            let product = a * b;
+            callback("product is : "+product);
+        };
+        function f4(a,b,callback) {
+            let div = a / b;
+            callback("division is : "+div);
+        };
+        function f5(a,b,callback2,cbadd,cbproduct,cbdiv) {
+            let subtract = a - b;
+            callback2("subtraction is : "+subtract);
+            cbadd(5,5,f1);
+            cbproduct(5,5,f1);
+            cbdiv(10,5,f1);
+        };
+        f5(10,5,f1,f2,f3,f4);
+    </script>
+</body>
+</html>

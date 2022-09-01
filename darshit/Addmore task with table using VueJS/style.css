@@ -1,0 +1,38 @@
+
+body{
+    background-color: rgb(148, 241, 198);
+}
+#button1{
+    font-size: large;
+    background-color: darksalmon;
+    margin : 10px;
+    padding: 5px;
+    text-align: center;
+}
+#btn {
+    margin: 0;
+    position: absolute;
+    top: 30%;
+    left: 40%;
+
+}
+#div1{
+    background-color: antiquewhite;
+    margin : 10px;
+    padding: 10px;
+    border: 2px solid black;
+}
+.lebel1{
+    margin-left: 10px;
+    padding: 10px;
+    font-size: large;
+}
+.input1{
+    font-size: medium;
+    background-color: white;
+    margin-top : 10px;
+}
+header {
+    background-color: darksalmon;
+    text-align: center;
+}

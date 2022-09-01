@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callback3</title>
+</head>
+<body>
+    <script>
+        function sum(a, b, callback) {
+            let sum = a + b;
+            console.log("result of sum is ="+sum);
+            callback(sum,5,multiply); //subtract called
+        };
+        function subtract(a,b,callback) {
+            let subtract = a - b;
+            console.log("result of subtract is ="+subtract);
+            callback(subtract,10,division); //multiply called
+        };
+        function multiply(a,b,callback) {
+            let multiply = a * b;
+            console.log("result of multiply is ="+multiply);
+            callback(multiply, 10); //division called
+        };
+        function division(a,b) {
+            let division = a / b;
+            console.log("result of division is ="+division);
+        };
+        // sum(5,5,subtract);
+        setTimeout(sum,5000,5,5,subtract);  //sum called
+        
+    </script>
+</body>
+</html>
