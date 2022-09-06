@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:widget="http://www.netvibes.com/ns/"
+>
+  <head>
+    <meta name="author" content="Omesh" />
+    <meta name="description" content="Omesh Vue Widget" />
+    <meta charset="UTF-8" />
+    <!-- Load UWA environment -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../c/UWA/assets/css/standalone.css"
+    />
+    <script
+      type="text/javascript"
+      src="../c/UWA/js/UWA_Standalone_Alone.js"
+    ></script>
+
+    <script type="text/javascript">
+      require(["./Vue/Vue"], function (Vue) {
+        widget.addEvents({
+          onLoad: function () {
+            new Vue({
+              el: "#app",
+              data: {
+                items: ["Prasad", "Abhay", "Mayur", "Tejas"],
+                firstName: "Omesh",
+                lastName: "Attal",
+              },
+            });
+          },
+        });
+      });
+    </script>
+    <widget:preferences>
+      <widget:preference name="Name" type="list" label="State" defaultValue="All">
+         <widget:option label="All" value="All"></widget:option>
+         <widget:option label="Omesh" value="OmeshAttal"></widget:option>
+         <widget:option label="Darshit" value="Darshit Bhatt"></widget:option>
+    </widget:preference>
+
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <h2>Vue using single html file !</h2>
+        <p>My name is {{firstName}} {{lastName}}</p>
+        <ul style="list-style-type: circle">
+          <li v-for="i in items">{{i}}</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
