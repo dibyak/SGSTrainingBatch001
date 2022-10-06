@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task</title>
+  </head>
+  <body>
+    <h1>Asynchronous functions in JavaScript</h1>
+    <script>
+              let f1=0;
+              let f2=0;
+              function run() {
+                  console.log("function run executed..");
+                  f1=1;
+              };
+              function sing() {
+                  console.log("function sing executed..");
+                  f2=1;
+              };
+              function eat() {
+                  console.log("function eat executed..");
+              };
+              setTimeout(run,0); //
+              // setTimeout(function() { run(); },0);
+            //   run();
+              // setTimeout(sing,0);
+              sing(); //
+              if(f1==1 && f2==1) {
+                eat();
+              };
+                // const getData = async () => {
+                //    const r = run();
+                //     const s = sing();
+                // const values = await Promise.all([r, s]);
+                // function eat() {
+                //   console.log("function eat executed..");
+                // };
+                // }
+                // Promise.all([run, sing]).then((values) => {
+                //     function eat() {
+                //   console.log("function eat executed..");
+                //     };
+                // });
+                // async.waterfall([
+                //     firstFunction,
+                //     secondFunction
+                // ], function () {
+                //     console.log("function eat executed..");
+                // });
+    </script>
+  </body>
+</html>

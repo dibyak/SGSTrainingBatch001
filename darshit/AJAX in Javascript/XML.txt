@@ -1,0 +1,4 @@
+XML introduction
+XML (Extensible Markup Language) is a markup language similar to HTML, but without predefined tags to use.
+Instead, you define your own tags designed specifically for your needs.
+This is a powerful way to store data in a format that can be stored, searched, and shared.

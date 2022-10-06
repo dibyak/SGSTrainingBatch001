@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callbacks2</title>
+</head>
+<body>
+    <script>
+        function print(something) {
+            console.log(something);
+        };
+        function f1(a,b,callback) {
+            let product = a * b;
+            callback("in f1 product -- product = " +product);
+            // console.log("in f1 product -- product = "+product);
+            // callback(product,10); // not called
+        };
+        function f2(a,b,callback) {
+            let sum = a + b;
+            console.log("in f2 sum -- result = "+sum);
+            callback(sum, 10 ,f4); //f3 
+        };
+        function f3(a,b,callback) {
+            let div = a / b;
+            console.log("in f3 division -- result = "+div);
+            callback(div,10, f1); //f4
+        };
+        function f4(a,b,callback) {
+            let subtract = a - b;
+            console.log("in f4 subtract -- result = "+subtract);
+            callback(subtract, 10,print); //f1
+        };
+        
+        f2(5,5, f3);
+    </script>
+</body>
+</html>
