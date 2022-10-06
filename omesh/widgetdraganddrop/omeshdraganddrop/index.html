@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
+
+<head>
+  <title>My Vue Widget</title>
+  <meta name="author" content="Omesh" />
+  <meta name="description" content="Omesh Vue Widget" />
+  <meta charset="UTF-8" />
+  <!-- Load UWA environment -->
+  <link rel="stylesheet" type="text/css" href="../c/UWA/assets/css/standalone.css" />
+  <script type="text/javascript" src="../c/UWA/js/UWA_Standalone_Alone.js"></script>
+
+  <script type="text/javascript">
+    require(["omeshdraganddrop/scripts/main"], function (myWidget) {
+      widget.addEvents({
+        onLoad: function () {
+          myWidget.onLoad();
+        },
+      });
+    });
+  </script>
+
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td,
+    th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+
+    .box {
+      float: left;
+      width: 100px;
+      height: 20px;
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid black;
+      text-align: center;
+    }
+
+    /* #dragElement1,
+    #dragElement2,
+    #dragElement3 {
+      float: left;
+      width: 100px;
+      height: 20px;
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid black;
+      text-align: center;
+    } */
+  </style>
+
+</head>
+
+<body>
+  <div id="app">
+    <h2 class>Drag and Drop</h2>
+    <div class="box" id="dragElement1" style="background-color: aqua;">
+      <p style="font-weight: bold;">{{name1}}</p>
+    </div>
+    <div class="box" id="dragElement2" style="background-color: rgb(129, 192, 192)">
+      <p style="font-weight: bold;">{{name2}}</p>
+    </div>
+    <div class="box" id="dragElement3" style="background-color: rgb(174, 189, 189)">
+      <p style="font-weight: bold;">{{name3}}</p>
+    </div>
+    <div id="dropElement">
+      <img v-bind:src="imgUrl" />
+    </div>
+    <table style="width: 100%;">
+      <tr>
+        <th>User Name</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Gender</th>
+        <th>Age</th>
+      </tr>
+      <tr v-for="(item, i) in dropData" :key="i">
+        <td>{{item.name}}</td>
+        <td>{{item.firstName}}</td>
+        <td>{{item.lastName}}</td>
+        <td>{{item.gender}}</td>
+        <td>{{item.age}}</td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+</html>
