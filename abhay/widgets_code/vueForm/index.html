@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
+
+<head>
+   <!-- Application Metas -->
+   <title>My Vue Widget</title>
+    <meta name="author" content="Darshit" />
+    <meta name="description" content="Darshit Vue Widget" />
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="../c/UWA/assets/css/standalone.css"
+  />
+  <script
+    type="text/javascript"
+    src="../c/UWA/js/UWA_Standalone_Alone.js"
+  ></script>
+   <link rel="stylesheet" type="text/css" href="styles/Main.css" />
+   <!-- Application JavaScript Source -->
+   <script type="text/javascript"> 
+      require(
+         ['DS/vueForm/script/form'], function ( myWidget ) {         
+         widget.addEvents({
+            onLoad: function () {              
+               myWidget.onLoad();
+            },
+         });
+      });
+   </script>
+   <!-- Application Preferences -->
+   <widget:preferences>
+      <widget:preference name="Name" type="list" label="State" defaultValue="All">
+         <widget:option label="All" value="All"></widget:option>
+         <widget:option label="Dhansri" value="Dhansri Bhad"></widget:option>
+         <widget:option label="Abhay" value="Abhay Thorat"></widget:option>
+    </widget:preference>
+</head>
+
+<body>
+   <div id="app" class="container">
+    <header>
+        <h1>Vue Project For Widgets</h1>
+      </header>
+      <section>
+        <!-- <h2 :class='{customClass: isClassActive}'>{{ Header }}</h2> -->
+        <!-- <h2 :style="[styleObject, styleObject2]">{{ Header }}</h2> -->
+        <h2>{{ Header }}</h2>
+        <input type="text" v-model="enterValue" />
+        <button v-on:click="addTask">Add Tasks</button>
+        <p v-if="tasks.length === 0 && !invalidTask">
+          No tasks have been added yet - please start adding some!
+        </p>
+        <p v-else-if="invalidTask">Please add valid tasks !!</p>
+        <p v-else>Below are the task details !!</p>
+        <p>{{ message }}</p>
+        <ul>
+          <li v-for="item in tasks">{{ item }}</li>
+        </ul>
+      </section>
+    </div>
+</body>
+
+</html>
