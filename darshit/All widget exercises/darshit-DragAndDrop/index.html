@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
+
+<head>
+   <!-- Application Metas -->
+   <title>My Vue Widget</title>
+   <meta name="author" content="Darshit" />
+   <meta name="description" content="Darshit Vue Widget" />
+   <meta charset="UTF-8" />
+   <link rel="stylesheet" type="text/css" href="../c/UWA/assets/css/standalone.css" />
+   <script type="text/javascript" src="../c/UWA/js/UWA_Standalone_Alone.js"></script>
+   <link rel="stylesheet" type="text/css" href="./assets/styles/styles.css" />
+   <!-- Application JavaScript Source -->
+   <script type="text/javascript">
+      require(
+         ['darshit-DragAndDrop/scripts/main'], function (myWidget) {
+            widget.addEvents({
+               onLoad: function () {
+                  myWidget.onLoad();
+               },
+            });
+         });
+   </script>
+   <!-- Application Preferences -->
+   <widget:preferences>
+      <widget:preference name="Name" type="list" label="State" defaultValue="All">
+         <widget:option label="All" value="All"></widget:option>
+         <widget:option label="Dhansri" value="Dhansri Bhad"></widget:option>
+         <widget:option label="Abhay" value="Abhay Thorat"></widget:option>
+         <widget:option label="Darshit" value="Darshit Bhatt"></widget:option>
+         <widget:option label="Omesh" value="Omesh Attal"></widget:option>
+      </widget:preference>
+</head>
+
+<body>
+   <div id="app">
+      <div>
+         <h2>drag and drop</h2>
+      </div>
+      <div id="dragContainer">
+         <h3>drag div</h3>
+      </div>
+      <div id="container">
+         <h3>drop div</h3>
+         <!-- <img src="https://www.steepgraphdev21x.com/3dspace/webapps/vue-dragAndDrop/images/dragDropPPR.png" /> -->
+         <p>{{widgetItems}}</p>
+      </div>
+      
+   </div>
+   <style>
+      #container {
+         width: 300px;
+         height: 150px;
+         margin: 10px;
+         padding: 10px;
+         border: 1px solid black;
+         background-color: rgb(131, 214, 235);
+      }
+      #dragContainer {
+         width: 300px;
+         height: 150px;
+         margin: 10px;
+         padding: 10px;
+         border: 1px solid black;
+         background-color: rgb(238, 120, 120);
+      }
+   </style>
+</body>
+
+</html>

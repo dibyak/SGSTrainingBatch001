@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
+
+<head>
+   <!-- Application Metas -->
+   <title>My Vue Widget</title>
+   <meta name="author" content="Darshit" />
+   <meta name="description" content="Darshit Vue Widget" />
+   <meta charset="UTF-8" />
+   <link rel="stylesheet" type="text/css" href="../c/UWA/assets/css/standalone.css" />
+   <script type="text/javascript" src="../c/UWA/js/UWA_Standalone_Alone.js"></script>
+   <link rel="stylesheet" type="text/css" href="./assets/styles/styles.css" />
+   <!-- Application JavaScript Source -->
+   <script type="text/javascript">
+      require(
+         ['flowers-subscribe1/scripts/main'], function (myWidget) {
+            widget.addEvents({
+               onLoad: function () {
+                  myWidget.onLoad();
+               },
+            });
+         });
+   </script>
+   <!-- Application Preferences -->
+   <widget:preferences>
+      <widget:preference name="Name" type="list" label="State" defaultValue="All">
+         <widget:option label="All" value="All"></widget:option>
+         <widget:option label="Dhansri" value="Dhansri Bhad"></widget:option>
+         <widget:option label="Abhay" value="Abhay Thorat"></widget:option>
+      </widget:preference>
+</head>
+
+<body>
+   <div id="app">
+      <div>
+         <h2>publish and subscribe in widgets</h2>
+      </div>
+      <p>{{darshit}}</p>
+      <div class="container">
+         <img v-bind:src="rose" id="rose" class="center" />
+         <img v-bind:src="marigold" id="marigold" class="center" />
+         <img v-bind:src="lotus" id="lotus" class="center" />
+         <img v-bind:src="sunflower" id="sunflower" class="center" />
+      </div>
+   </div>
+   <style>
+      .button {
+         background: #000;
+         position: unset;
+      }
+      .container {
+         height: 800px;
+         width: 800px;
+         border: 2px solid black;
+         display: grid;
+         grid-template-columns: 400px 400px;
+         grid-template-rows: 400px 400px;
+         padding: 0;
+      }
+      #rose {
+         display: none;
+      }
+      #marigold {
+         display: none;
+      }
+      #lotus {
+         display: none;
+      }
+      #sunflower {
+         display: none;
+      }
+      #app {
+         font-family: "Avenir", Helvetica, Arial, sans-serif;
+         color: #2c3e50;
+         margin-top: 10px;
+      }
+      h1,
+      h2 {
+         text-align: center;
+         padding: 9px;
+         color: #00897b;
+         background: #e0f2f1;
+         font-size: xx-large;
+      }
+
+      .v-toolbar__content {
+         background: #00897b;
+      }
+   </style>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
+
+<head>
+   <!-- Application Metas -->
+   <title>My Vue Widget</title>
+    <meta name="author" content="Darshit" />
+    <meta name="description" content="Darshit Vue Widget" />
+    <meta charset="UTF-8" />
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="../c/UWA/assets/css/standalone.css"
+  />
+  <script
+    type="text/javascript"
+    src="../c/UWA/js/UWA_Standalone_Alone.js"
+  ></script>
+   <link rel="stylesheet" type="text/css" href="styles/Main.css" />
+   <!-- Application JavaScript Source -->
+   <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+   <script type="text/javascript"> 
+      require(
+         ['DS/vuetify-darshit/scripts/main'], function ( myWidget ) {         
+         widget.addEvents({
+            onLoad: function () {              
+               myWidget.onLoad();
+            },
+         });
+      });
+   </script>
+   <!-- Application Preferences -->
+   <widget:preferences>
+      <widget:preference name="Name" type="list" label="State" defaultValue="All">
+         <widget:option label="All" value="All"></widget:option>
+         <widget:option label="Dhansri" value="Dhansri Bhad"></widget:option>
+         <widget:option label="Abhay" value="Abhay Thorat"></widget:option>
+    </widget:preference>
+</head>
+
+<body>
+   <div id="app">
+      <v-app id="inspire">
+          <v-navigation-drawer v-model="drawer"
+            app>
+            <v-list-item>
+              <v-list-item-content>
+                <v-list-item-title class="text-h6">
+                  Application
+                </v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+            <v-divider></v-divider>
+            <v-list
+              dense
+              nav
+            >
+              <v-list-item
+                v-for="item in items"
+                :key="item.title"
+                :to="item.to"
+                link
+              >
+                <v-list-item-icon>
+                  <v-icon>{{ item.icon }}</v-icon>
+                </v-list-item-icon>
+      
+                <v-list-item-content>
+                  <v-list-item-title>{{ item.title }}</v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </v-list>
+          </v-navigation-drawer>
+      
+          <v-app-bar
+            app
+            color="primary"
+            dark
+            src="image.jpg"
+            prominent
+          >
+            <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      
+            <v-toolbar-title>Application</v-toolbar-title>
+          </v-app-bar>
+      
+          <v-main>
+            <router-view></router-view>
+          </v-main>
+        </v-app>
+    </div>
+</body>
+
+</html>
