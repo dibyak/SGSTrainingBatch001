@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
+
+<head>
+  <title>Publish Widget</title>
+  <meta name="author" content="Omesh" />
+  <meta name="description" content="Omesh Publish Event Widget" />
+  <meta charset="UTF-8" />
+  <!-- Load UWA environment -->
+  <link rel="stylesheet" type="text/css" href="../c/UWA/assets/css/standalone.css" />
+  <script type="text/javascript" src="../c/UWA/js/UWA_Standalone_Alone.js"></script>
+
+  <script type="text/javascript">
+    require(["omeshpublish/scripts/main"], function (myWidget) {
+      widget.addEvents({
+        onLoad: function () {
+          myWidget.onLoad();
+        },
+      });
+    });
+  </script>
+
+<style>
+    .button {
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+    }
+    
+    .button2 {
+      background-color: white; 
+      color: black; 
+      border: 2px solid #008CBA;
+    }
+    
+    .button2:hover {
+      background-color: #008CBA;
+      color: white;
+    }
+    
+    </style>
+
+  <widget:preferences>
+    <widget:preference name="Name" type="list" label="State" defaultValue="All">
+      <widget:option label="All" value="All"></widget:option>
+      <widget:option label="Dhansri" value="Dhansri Bhad"></widget:option>
+      <widget:option label="Abhay" value="Abhay Thorat"></widget:option>
+    </widget:preference>
+</head>
+
+<body>
+  <div id="app">
+    <h1>Publish the event from here</h1>
+    <button class="button button2" v-on:click="publishEvent()">Rose</button>
+    <button class="button button2" v-on:click="publishEvent1()">Marigold</button>
+    <button class="button button2" v-on:click="publishEvent2()">Lotus</button>
+    <button class="button button2" v-on:click="publishEvent3()">Sunflower</button>
+  </div>
+</body>
+
+</html>

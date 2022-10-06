@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
+
+<head>
+  <title>My Vue Widget</title>
+  <meta name="author" content="Omesh" />
+  <meta name="description" content="Omesh Vue Widget" />
+  <meta charset="UTF-8" />
+  <!-- Load UWA environment -->
+  <link rel="stylesheet" type="text/css" href="../c/UWA/assets/css/standalone.css" />
+  <script type="text/javascript" src="../c/UWA/js/UWA_Standalone_Alone.js"></script>
+
+  <script type="text/javascript">
+    require(["omeshsubscribe/scripts/main"], function (myWidget) {
+      widget.addEvents({
+        onLoad: function () {
+          myWidget.onLoad();
+        },
+      });
+    });
+  </script>
+  <style>
+    .container {
+      display: grid;
+      /* 
+     height: auto; */
+
+      grid-template-columns: 400px 400px;
+
+      grid-template-rows: 400px 400px;
+    }
+
+    #rose,
+    #lotus,
+    #mari,
+    #sunflower {
+      display: none;
+    }
+
+    .container img {
+      width: 100%;
+    }
+  </style>
+
+  <widget:preferences>
+    <widget:preference name="Name" type="list" label="State" defaultValue="All">
+      <widget:option label="All" value="All"></widget:option>
+      <widget:option label="Dhansri" value="Dhansri Bhad"></widget:option>
+      <widget:option label="Abhay" value="Abhay Thorat"></widget:option>
+    </widget:preference>
+</head>
+
+<body>
+  <div id="app">
+    <h2 class>App</h2>
+    <h3>Flower task to</h3>
+    <div class="container">
+      <img class="center" id="rose" v-bind:src="rose" />
+      <img class="center" id="mari" v-bind:src="marigold" />
+      <img class="center" id="lotus" v-bind:src="lotus" />
+      <img class="center" id="sunflower" v-bind:src="sunflower" />
+    </div>
+  </div>
+</body>
+
+</html>
