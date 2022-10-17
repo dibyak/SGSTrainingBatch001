@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
+</head>
+<body>
+    <p id="p1">This is paragraph 1</p>
+    <p id="p2">This is paragraph 2</p>
+    <p id="p3">This is paragraph 3</p>
+    <p id="p4">This is paragraph 4</p>
+    <button>Click to fade in/out boxes</button><br><br>
+    <script>
+        $(document).ready(
+            function(){
+                $("button").click(function(){
+                    $("p").fadeToggle(2000,function() {
+                    //console.log("faded out");
+                });
+                });
+            }
+        );
+    </script>
+</body>
+</html>

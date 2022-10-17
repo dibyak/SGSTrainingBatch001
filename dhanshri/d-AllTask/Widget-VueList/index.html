@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
+
+<head>
+   <!-- Application Metas -->
+   <title>Vue Widget</title>
+    <meta name="author" content=" " />
+    <meta name="description" content=" Vue Widget" />
+    <meta charset="UTF-8" />
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="../c/UWA/assets/css/standalone.css"
+  />
+  <script
+    type="text/javascript"
+    src="../c/UWA/js/UWA_Standalone_Alone.js"
+  ></script>
+   <link rel="stylesheet" type="text/css" href="style .css" />
+   <!-- Application JavaScript Source -->
+   <script type="text/javascript"> 
+      require(
+         ['DS/Widget-VueList/scripts/main'], function ( myWidget ) {         
+         widget.addEvents({
+            onLoad: function () {              
+               myWidget.onLoad();
+            },
+         });
+      });
+   </script>
+   <!-- Application Preferences -->
+   <widget:preferences>
+      <widget:preference name="Name" type="list" label="State" defaultValue="All">
+         <widget:option label="All" value="All"></widget:option>
+         <widget:option label="Dhansri" value="Dhansri Bhad"></widget:option>
+         <widget:option label="Abhay" value="Abhay Thorat"></widget:option>
+    </widget:preference>
+</head>
+
+<body>
+      <header>
+         <h1>Form using Vue</h1>
+     </header>
+     <section id="app">
+       <div id="div1">
+         <label class="label1"><b>Enter Employee ID:</b></label>
+         <input type="text" class="input1" v-model="empid" /> 
+         <label class="label1" ><b>Enter First name:</b></label>
+         <input type="text" class="input1" v-model="fname" /> 
+         <label class="label1"><b>Enter Last name:</b></label>
+         <input type="text" class="input1" v-model="lname" />
+         <label class="label1"><b>Enter age:</b></label>
+         <input type="text" class="input1" v-model="age" />
+         <label class="label1"><b>Enter gender:</b></label>
+         <input type="text" class="input1" v-model="gender" />
+       </div>
+         <div id="btn">
+         <button type="button" id="button1" v-on:click="addMore">Add Data</button>
+         </div>
+         <ol>
+             <h3>{{ Header5 }}</h3>
+             <li v-for="item5 in more5">{{ item5 }}</li>
+         </ol>
+         <ol>
+             <h3>{{ Header1 }}</h3>
+             <li v-for="item1 in more1">{{ item1 }}</li>
+         </ol>
+         <ol>
+             <h3>{{ Header2 }}</h3>
+             <li v-for="item2 in more2">{{ item2 }}</li>
+         </ol>
+         <ol>
+             <h3>{{ Header3 }}</h3>
+             <li v-for="item3 in more3">{{ item3 }}</li>
+         </ol>
+         <ol>
+             <h3>{{ Header4 }}</h3>
+             <li v-for="item4 in more4">{{ item4 }}</li>
+         </ol>
+     </section>
+</body>
+
+</html>
