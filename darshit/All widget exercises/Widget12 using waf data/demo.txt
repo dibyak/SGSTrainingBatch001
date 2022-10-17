@@ -1,0 +1,68 @@
+define(["DS/vue/vue", "DS/WAFData/WAFData"], function (Vue, WAFData) {
+  var myWidget = {
+    onLoad: function () {
+      new Vue({
+        el: "#app",
+        data: {
+          emp: [
+            {
+              Username: "dhanshrib",
+              FirstName: "Dhanshri",
+              LastName: "Bhad",
+              Age: 24,
+              Gender: "Female",
+              EmpID: "E02",
+            },
+            {
+              Username: "darshitb",
+              FirstName: "Darshit",
+              LastName: "Bhatt",
+              Age: 24,
+              Gender: "Male",
+              EmpID: "E02",
+            },
+            {
+              Username: "dibyakb",
+              FirstName: "Dibyak",
+              LastName: "Biswas",
+              Age: 39,
+              Gender: "Male",
+              EmpID: "E03",
+            },
+            {
+              Username: "abhayt",
+              FirstName: "Abhay",
+              LastName: "Thorat",
+              Age: 23,
+              Gender: "Male",
+              EmpID: "E04",
+            },
+            {
+              Username: "omesha",
+              FirstName: "Omesh",
+              LastName: "Attal",
+              Age: 26,
+              Gender: "Male",
+              EmpID: "E05",
+            },
+          ],
+        },
+      });
+      WAFData.authenticatedRequest("https://www.steepgraphdev21x.com/3dspace/AbhayEmpServices/someservices/getEmpdata", {
+        method: 'GET',
+        accept: 'application/json',
+        onComplete: function (dataResp) {
+          debugger
+          console.log(dataResp)
+
+        },
+        onFailure: function (error) {
+          widget.body.innerHTML += "<p>ERROR</p>";
+          widget.body.innerHTML += "<p>" + JSON.stringify(error) + "</p>";
+        }
+      });
+    },
+  };
+  widget.myWidget = myWidget;
+  return myWidget;
+});

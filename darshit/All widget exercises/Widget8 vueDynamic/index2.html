@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
+
+<head>
+   <!-- Application Metas -->
+   <title>My Vue Widget</title>
+    <meta name="author" content="Darshit" />
+    <meta name="description" content="Darshit Vue Widget" />
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="../c/UWA/assets/css/standalone.css"
+  />
+  <script
+    type="text/javascript"
+    src="../c/UWA/js/UWA_Standalone_Alone.js"
+  ></script>
+   <link rel="stylesheet" type="text/css" href="styles/Main.css" />
+   <!-- Application JavaScript Source -->
+   <script type="text/javascript"> 
+      require(
+         ['vue-dynamic/dist/build'], function ( myWidget ) {         
+         widget.addEvents({
+            onLoad: function () {              
+              //  myWidget.onLoad();
+            },
+         });
+      });
+   </script>
+   <!-- Application Preferences -->
+   <widget:preferences>
+      <widget:preference name="Name" type="list" label="State" defaultValue="All">
+         <widget:option label="All" value="All"></widget:option>
+         <widget:option label="Dhansri" value="Dhansri Bhad"></widget:option>
+         <widget:option label="Abhay" value="Abhay Thorat"></widget:option>
+         <widget:option label="Darshit" value="Darshit Bhatt"></widget:option>
+         <widget:option label="Omesh" value="Omesh Attal"></widget:option>
+    </widget:preference>
+</head>
+
+<body>
+   <div id="app" class="container">
+      <!-- <h1 class="mt-4 text-center">Form using vue</h1>
+      <form>
+        <div class="form-group">
+          <label class="label1"><b>Enter Employee ID :</b></label>
+          <input type="text" class="input1" v-model="empid"/>
+          </div>
+        <div class="form-group">
+          <label for="fname"><b>First Name :</b></label>
+          <input
+            type="text"
+            v-model="fname"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label for="lname"><b>Last Name :</b></label>
+          <input
+            type="text"
+            v-model="lname"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label class="label1"><b>Enter age :</b></label>
+          <input type="text" class="input1" v-model="age" />
+          </div>
+          <div class="form-group">
+          <label class="label1"><b>Enter gender :</b></label>
+          <input type="text" class="input1" v-model="gender" />
+          </div>
+        <button type="button" v-on:click="onSubmit" class="btn btn-dark">
+          Submit
+        </button>
+      </form>
+      <table class="table mt-5">
+        <thead>
+          <tr>
+            <th scope="col"> Emp. ID</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col"> Age </th>
+            <th scope="col"> Gender </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="entry in sortedList">
+            <td>{{ entry.empid }}</td>
+            <td>{{ entry.fname }}</td>
+            <td>{{ entry.lname }}</td>
+            <td>{{ entry.age }}</td>
+            <td>{{ entry.gender }}</td>
+          </tr>
+        </tbody>
+      </table> -->
+    </div>
+</body>
+
+</html>
