@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FORM1</title>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  
+    <script src="/form.js"></script>
+   <link rel="stylesheet" href="form.css">
+  </head>
+
+  <body>
+    <h1>My Form</h1>
+    <form>
+      <div id="div1">
+        <label for="fname">First name:</label>
+        <input type="text" id="fname0" />
+        <label for="fname">Last name:</label>
+        <input type="text" id="lname0" />
+      </div>
+    </form>
+    <br />
+    <button onclick="addmore()" id="button1" class="c">Add more</button>
+    <button onclick="submit()" id="button2" class="c">Submit</button>
+    <button id="b1" class="c">Toggle</button>
+    <button id="b2" class="c">Show/Hide Table</button>
+    <br />
+    <div id="container">
+      <div id="z">
+        <table id="table1">
+          <tr id="tr1">
+            <td style="border: 2px solid black">Firstname</td>
+            <td style="border: 2px solid black">Laststname</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
