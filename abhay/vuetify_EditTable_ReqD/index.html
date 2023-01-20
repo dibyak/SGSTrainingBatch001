@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
+
+<head>
+    <title>My Vue Widget</title>
+    <meta name="author" content="Abhay" />
+    <meta name="description" content="Abhay Vuetify Widget" />
+    <meta charset="UTF-8" />
+    <!-- Load UWA environment -->
+    <link rel="stylesheet" type="text/css" href="../c/UWA/assets/css/standalone.css" />
+    <script type="text/javascript" src="../c/UWA/js/UWA_Standalone_Alone.js"></script>
+    <!-- <script type="text/javascript" src="../AmdLoader/AmdLoader.js"></script> -->
+
+    <link rel="stylesheet" type="text/css" href="./styles/google.css"/>
+
+    <link rel="stylesheet" type="text/css" href="./styles/materialdesignicons.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css" />
+
+    <link rel="stylesheet" type="text/css" href="./styles/vuetify.min.css" />
+
+
+    <!-- <link rel="stylesheet" type="text/css" href="./style/googleapi.css" />
+
+    <link rel="stylesheet" type="text/css" href="./style/materialdesignicon.css" /> -->
+
+    <script type="text/javascript">
+        require(["Vuetify_EditTable_ReqD/scripts/main"], function (myWidget) {
+            widget.addEvents({
+                onLoad: function () {
+                    myWidget.onLoad();
+                },
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="app"></div>
+</body>
+
+</html>
