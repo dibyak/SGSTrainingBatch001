@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="dist/jquery.js"></script>
+  <script src="dist/jquery-simple-tree-table.js"></script>
+</head>
+<body>
+  <h1>Basic Table</h1>
+  <button type="button" id="expander">expand</button>
+  <button type="button" id="collapser">collapse</button>
+  <button type="button" id="open1">open 1</button>
+  <button type="button" id="close1">close 1</button>
+  <table id="basic" border="1">
+    <thead>
+      <tr>
+        <td>-</td>
+        <td><b>text field 1</b></td>
+        <td><b>text field 2</b></td>
+        <td><b>text field 3</b></td>
+        <td><b>text field 4</b></td>
+     </tr>
+    </thead>
+    <tr data-node-id="1">
+      <td><a href="#">1</a></td>
+      <td>text of 1</td>
+      <td>text of 1</td>
+      <td>text of 1</td>
+      <td>text of 1</td>
+    </tr>
+    <tr data-node-id="1.1" data-node-pid="1">
+      <td><a href="#">1.1</a></td>
+      <td>text of 1.1</td>
+      <td>text of 1.1</td>
+      <td>text of 1.1</td>
+      <td>text of 1.1</td>
+    </tr>
+    <tr data-node-id="1.1.1" data-node-pid="1.1">
+      <td><a href="#">1.1.1</a></td>
+      <td>text of 1.1.1</td>
+      <td>text of 1.1.1</td>
+      <td>text of 1.1.1</td>
+      <td>text of 1.1.1</td>
+    </tr>
+    <tr data-node-id="1.1.1.1" data-node-pid="1.1.1">
+        <td><a href="#">1.1.1.1</a></td>
+        <td>text of 1.1.1.1</td>
+        <td>text of 1.1.1.1</td>
+        <td>text of 1.1.1.1</td>
+        <td>text of 1.1.1.1</td>
+      </tr>
+      <tr data-node-id="1.1.1.1.1" data-node-pid="1.1.1.1">
+        <td><a href="#">1.1.1.1.1</a></td>
+        <td>text of 1.1.1.1.1</td>
+        <td>text of 1.1.1.1.1</td>
+        <td>text of 1.1.1.1.1</td>
+        <td>text of 1.1.1.1.1</td>
+      </tr>
+    <tr data-node-id="1.1.2" data-node-pid="1.1">
+      <td><a href="#">1.1.2</a></td>
+      <td>text of 1.1.2</td>
+      <td>text of 1.1.2</td>
+      <td>text of 1.1.2</td>
+      <td>text of 1.1.2</td>
+    </tr>
+    <tr data-node-id="1.2" data-node-pid="1">
+      <td><a href="#">1.2</a></td>
+      <td>text of 1.2</td>
+      <td>text of 1.2</td>
+      <td>text of 1.2</td>
+      <td>text of 1.2</td>
+    </tr>
+    <tr data-node-id="1.2.1" data-node-pid="1.2">
+      <td><a href="#">1.2.1</a></td>
+      <td>text of 1.2.1</td>
+      <td>text of 1.2.1</td>
+      <td>text of 1.2.1</td>
+      <td>text of 1.2.1</td>
+    </tr>
+    <tr data-node-id="1.2.2" data-node-pid="1.2">
+      <td><a href="#">1.2.2</a></td>
+      <td>text of 1.2.2</td>
+      <td>text of 1.2.2</td>
+      <td>text of 1.2.2</td>
+      <td>text of 1.2.2</td>
+    </tr>
+    <tr data-node-id="2">
+      <td><a href="#">2</a></td>
+      <td>text of 2</td>
+      <td>text of 2</td>
+      <td>text of 2</td>
+      <td>text of 2</td>
+    </tr>
+    <tr data-node-id="2.1" data-node-pid="2">
+      <td><a href="#">2.1</a></td>
+      <td>text of 2.1</td>
+      <td>text of 2.1</td>
+      <td>text of 2.1</td>
+      <td>text of 2.1</td>
+    </tr>
+    <tr data-node-id="2.2" data-node-pid="2">
+      <td><a href="#">2.2</a></td>
+      <td>text of 2.2</td>
+      <td>text of 2.2</td>
+      <td>text of 2.2</td>
+      <td>text of 2.2</td>
+    </tr>
+  </table>
+  <script>
+  $('#basic').simpleTreeTable({
+    expander: $('#expander'),
+    collapser: $('#collapser'),
+    // store: 'session',
+    // storeKey: 'simple-tree-table-basic'
+  });
+  $('#open1').on('click', function() {
+    $('#basic').data('simple-tree-table').openByID("1");
+  });
+  $('#close1').on('click', function() {
+    $('#basic').data('simple-tree-table').closeByID("1");
+  });
+  </script>
+  </body>
+  <style>
+    *{
+       font-size: large;
+       text-align: center;
+    }
+    h1,h2 {
+       color: rgb(0, 0, 0);
+       background:azure;
+    }
+    table {
+       font-family: arial, sans-serif;
+       border-collapse: collapse;
+       width: 100%;
+       font-size: large;
+       margin: 10px;
+    }
+
+    td {
+       border: 1px solid #000000;
+       text-align: left;
+       padding: 8px;
+       color: rgb(20, 20, 20);
+    }
+    th {
+       color: red;
+       border: 1px solid #000000;
+       text-align: left;
+       padding: 8px;
+       background-color: rgb(229, 226, 226);
+    }
+
+    tr:nth-child(even) {
+       background-color: #a6f9ff;
+    }
+
+    #container {
+       width: 60%;
+       height: 40px;
+       margin: auto;
+       padding: 10px;
+       border: 1px solid black;
+       background-color: rgb(131, 235, 157);
+    }
+
+    .dragContainer {
+       width: 100px;
+       height: 40px;
+       margin: auto;
+       padding: 10px;
+       border: 1px solid black;
+       background-color: rgb(253, 100, 151);
+    }
+ </style>
+</html>
